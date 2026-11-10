@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sofia Nabila — Creative Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FAF7F2;
+      --bg-card: #FFFFFF;
+      --navy: #203A62;
+      --navy-dark: #142540;
+      --purple-lavender: #8E54A2;
+      --purple-light: #EEDBFA;
+      --purple-soft: #D4B2E6;
+      --yellow-butter: #F8C630;
+      --yellow-light: #FFF0B3;
+      --pink-soft: #F9D0DC;
+      --kraft: #D4B28C;
+      --kraft-dark: #B58A59;
+      --text-dark: #1E293B;
+      --text-muted: #526071;
+      --border-color: #E6DFD5;
+      --shadow-sm: 0 4px 12px rgba(32, 58, 98, 0.06);
+      --shadow-md: 0 8px 24px rgba(32, 58, 98, 0.1);
+      --shadow-polaroid: 0 10px 25px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: radial-gradient(rgba(142, 84, 162, 0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4, .serif-font {
+      font-family: 'DM Serif Display', Georgia, serif;
+      letter-spacing: -0.01em;
+    }
+
+    .handwriting {
+      font-family: 'Caveat', cursive;
+    }
+
+    /* DECORATIVE ELEMENTS */
+    .sparkle {
+      display: inline-block;
+      color: var(--yellow-butter);
+      font-size: 1.25rem;
+      animation: pulse 2.5s infinite ease-in-out;
+    }
+
+    .sparkle-purple {
+      color: var(--purple-lavender);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+      50% { transform: scale(1.2) rotate(15deg); opacity: 1; }
+    }
+
+    .washi-tape {
+      position: absolute;
+      height: 26px;
+      background: rgba(248, 198, 48, 0.7);
+      backdrop-filter: blur(2px);
+      border-left: 2px dashed rgba(255,255,255,0.7);
+      border-right: 2px dashed rgba(255,255,255,0.7);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 2;
+    }
+
+    .washi-purple {
+      background: rgba(212, 178, 230, 0.75);
+    }
+
+    .washi-pink {
+      background: rgba(249, 208, 220, 0.75);
+    }
+
+    /* HEADER & NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1.5px solid var(--border-color);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--navy);
+    }
+
+    .brand-logo .logo-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .brand-logo .tag {
+      font-size: 0.75rem;
+      background: var(--purple-light);
+      color: var(--purple-lavender);
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--purple-lavender);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-navy {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-navy:hover {
+      background: var(--navy-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(32, 58, 98, 0.2);
+    }
+
+    .btn-purple {
+      background: var(--purple-lavender);
+      color: #fff;
+    }
+
+    .btn-purple:hover {
+      background: #79428c;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(142, 84, 162, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .btn-outline:hover {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 70px 24px 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--yellow-light);
+      color: #8c6703;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border: 1px solid rgba(248, 198, 48, 0.4);
+    }
+
+    .hero-banner {
+      display: inline-block;
+      background: var(--navy);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 6px;
+      box-shadow: 0 8px 18px rgba(32, 58, 98, 0.18);
+      position: relative;
+      margin-bottom: 24px;
+      transform: rotate(-1.5deg);
+    }
+
+    .hero-banner h1 {
+      font-size: 3.2rem;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-banner .heart-dot {
+      color: var(--pink-soft);
+    }
+
+    .hero-lead {
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      max-width: 520px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* POLAROID STACK */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .polaroid-card {
+      background: #fff;
+      padding: 16px 16px 24px;
+      box-shadow: var(--shadow-polaroid);
+      border-radius: 4px;
+      width: 100%;
+      max-width: 360px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .polaroid-card:hover {
+      transform: rotate(0deg) scale(1.02) !important;
+    }
+
+    .polaroid-img-wrapper {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(135deg, #e0d0ea 0%, #ffe9b8 50%, #dbeafe 100%);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .polaroid-img-wrapper .avatar-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 16px;
+      object-fit: cover;
+      background: #8e54a2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .polaroid-caption {
+      margin-top: 14px;
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .sticker-bow {
+      position: absolute;
+      top: -16px;
+      left: -16px;
+      font-size: 2.2rem;
+      transform: rotate(-15deg);
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+    }
+
+    .sticker-crown {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 1.8rem;
+    }
+
+    /* SECTION CONTAINERS */
+    section {
+      padding: 60px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-tag {
+      font-family: 'Caveat', cursive;
+      font-size: 1.35rem;
+      color: var(--purple-lavender);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .banner-title {
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 4px;
+      color: #fff;
+      box-shadow: var(--shadow-sm);
+      transform: rotate(-0.5deg);
+    }
+
+    .banner-title h2 {
+      font-size: 2.1rem;
+      margin: 0;
+    }
+
+    .banner-yellow {
+      background: var(--yellow-butter);
+      color: #1f2937;
+    }
+
+    .banner-purple {
+      background: var(--purple-lavender);
+      color: #fff;
+    }
+
+    .banner-navy {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    /* ABOUT SECTION (Page 2) */
+    .about-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1.5px solid var(--border-color);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      position: relative;
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+      line-height: 1.65;
+    }
+
+    .quote-box {
+      background: var(--yellow-light);
+      border-left: 4px solid var(--yellow-butter);
+      padding: 14px 18px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: #634a02;
+      font-style: italic;
+      margin: 20px 0;
+    }
+
+    .discipline-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #f1f5f9;
+      color: var(--navy);
+    }
+
+    .pill-yellow { background: var(--yellow-light); color: #8c6703; }
+    .pill-purple { background: var(--purple-light); color: var(--purple-lavender); }
+    .pill-pink { background: var(--pink-soft); color: #9c2d55; }
+
+    .about-sidebar {
+      background: var(--bg-cream);
+      border-radius: 8px;
+      padding: 24px;
+      border: 1.5px dashed var(--kraft-dark);
+    }
+
+    .about-sidebar h4 {
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 6px;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+    }
+
+    .info-list strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* EXPERIENCE SECTION (Page 3) */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .exp-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      border-left: 6px solid var(--navy);
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .exp-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .exp-card.yellow-accent { border-left-color: var(--yellow-butter); }
+    .exp-card.purple-accent { border-left-color: var(--purple-lavender); }
+    .exp-card.pink-accent { border-left-color: #f472b6; }
+
+    .exp-year {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      font-family: 'DM Serif Display', serif;
+      margin-bottom: 6px;
+    }
+
+    .exp-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .exp-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* PROJECT SHOWCASE SECTIONS */
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1.5px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 40px;
+      transition: all 0.25s ease;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-header-bar {
+      padding: 16px 24px;
+      background: #f8fafc;
+      border-bottom: 1.5px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-title-area h3 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .project-title-area p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .project-body {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    @media (max-width: 860px) {
+      .project-body {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .about-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .visual-mockup-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .mockup-item {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 16px;
+      text-align: center;
+      position: relative;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .mockup-item .mockup-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .mockup-item .mockup-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .mockup-item .mockup-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* PHOTO & MODELING GRIDS */
+    .photo-masonry {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .photo-frame {
+      background: #fff;
+      padding: 10px 10px 18px;
+      border-radius: 4px;
+      box-shadow: var(--shadow-polaroid);
+      text-align: center;
+      position: relative;
+      transition: transform 0.25s ease;
+    }
+
+    .photo-frame:hover {
+      transform: translateY(-4px) rotate(0.5deg);
+    }
+
+    .photo-box {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+
+    .photo-caption {
+      font-family: 'Caveat', cursive;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    /* PDF EMBED VIEWER */
+    .pdf-viewer-section {
+      background: #fff;
+      border-radius: 12px;
+      border: 1.5px solid var(--border-color);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin-top: 40px;
+    }
+
+    .pdf-frame-wrapper {
+      width: 100%;
+      height: 650px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 18px;
+      background: #333;
+    }
+
+    .pdf-frame-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* CONTACT SECTION (Page 9) */
+    .contact-container {
+      background: #fff;
+      border-radius: 16px;
+      border: 2px solid var(--border-color);
+      padding: 50px 30px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      position: relative;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .contact-card {
+      background: var(--bg-cream);
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px;
+      text-decoration: none;
+      color: var(--text-dark);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-card:hover {
+      background: #fff;
+      border-color: var(--purple-lavender);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-card .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--purple-lavender);
+      letter-spacing: 0.5px;
+    }
+
+    .contact-card .val {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-top: 4px;
+      word-break: break-all;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1.5px solid var(--border-color);
+      padding: 30px 24px;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      background: #fff;
+      margin-top: 60px;
+    }
+
+    footer p {
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="brand-logo">
+        <span class="sparkle sparkle-purple">✦</span>
+        <span class="logo-title serif-font">Sofia Nabila</span>
+        <span class="tag">Portfolio</span>
+      </a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#branding">Brand Design</a>
+        <a href="#marketing">Campaigns</a>
+        <a href="#photography">Photography</a>
+        <a href="#styling">Styling</a>
+        <a href="#deck-viewer">Slides</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="Sofia_Nabila_CV.pdf" target="_blank" class="btn btn-navy">
+          📄 CV
+        </a>
+        <a href="portfolio.pdf" target="_blank" class="btn btn-purple">
+          ✨ Deck (PDF)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO (Slide 1) -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="badge-pill">
+        <span>✨</span> Third-Year Media Studies Student @ Universiti Malaya
+      </div>
+
+      <div class="hero-banner">
+        <div class="washi-tape washi-pink" style="top: -12px; left: 20px; width: 80px; transform: rotate(-3deg);"></div>
+        <h1>creative<br>portfolio<span class="heart-dot">.</span></h1>
+      </div>
+
+      <p class="hero-lead">
+        Graphic Designer ✦ Marketing & Publication ✦ Content Strategist
+      </p>
+
+      <p class="hero-desc">
+        Turning ideas into work people connect with — from comprehensive brand identity systems to major festival campaigns, commercial bakery branding, and bespoke travel curation.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#branding" class="btn btn-purple">Explore Projects ✦</a>
+        <a href="#deck-viewer" class="btn btn-outline">View 9-Slide Deck</a>
+        <a href="#contact" class="btn btn-navy">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="polaroid-card" style="transform: rotate(2deg);">
+        <div class="washi-tape" style="top: -10px; left: 35%; width: 100px; transform: rotate(-1deg);"></div>
+        <div class="sticker-bow">🎀</div>
+        <div class="sticker-crown">👑</div>
+
+        <div class="polaroid-img-wrapper">
+          <div class="avatar-circle">SN</div>
+          <div style="font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 4px;">Sofia Nabila</div>
+          <div style="font-size: 0.88rem; color: #526071; font-weight: 500;">Universiti Malaya • Dean's List (Sem 2)</div>
+          <div style="margin-top: 14px; display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;">
+            <span class="pill pill-yellow">Branding</span>
+            <span class="pill pill-purple">PR & Media</span>
+            <span class="pill pill-pink">Social Media</span>
+          </div>
+        </div>
+
+        <div class="polaroid-caption">
+          "turning ideas into real connections ✧"
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION (Slide 2) -->
+  <section id="about">
+    <div class="section-header">
+      <span class="section-tag">✦ get to know me ✦</span>
+      <div class="banner-title banner-yellow">
+        <h2>hi, i'm Sofia</h2>
+      </div>
+    </div>
+
+    <div class="about-card">
+      <div class="about-text">
+        <h3>Creative Media & Communication Specialist</h3>
+        <p>
+          I’m a <strong>Media Studies student at Universiti Malaya</strong> with a strong interest in creative disciplines, including graphic design, marketing & publication, social media, photography, and art production.
+        </p>
+
+        <div class="quote-box">
+          “I love turning ideas into work people actually connect with, from a brand identity, a campaign concept, or content for a live art event.”
+        </div>
+
+        <p>
+          Whether directing marketing strategies for cultural festivals with thousands of attendees, curating visual branding for commercial ventures, or coordinating bespoke travel in Japan, I bring a sharp visual eye, structured execution, and authentic audience engagement.
+        </p>
+
+        <div class="discipline-pills">
+          <span class="pill pill-purple">✦ Graphic Design</span>
+          <span class="pill pill-yellow">✦ Marketing & Publication</span>
+          <span class="pill pill-pink">✦ Social Media Management</span>
+          <span class="pill pill-purple">✦ Photography</span>
+          <span class="pill pill-yellow">✦ Art Production & Modeling</span>
+        </div>
+      </div>
+
+      <div class="about-sidebar">
+        <h4>Key Highlights</h4>
+        <ul class="info-list">
+          <li>
+            <strong>Education</strong>
+            Bachelor of Media Studies, Universiti Malaya (3rd Year)
+          </li>
+          <li>
+            <strong>Academic Distinction</strong>
+            Dean's List Awardee (Semester 2)
+          </li>
+          <li>
+            <strong>Languages</strong>
+            Indonesian (Native), English (C1 IELTS Advanced), Malay (Fluent)
+          </li>
+          <li>
+            <strong>Core Tools</strong>
+            Canva, CapCut, Figma, Microsoft Excel & Office
+          </li>
+          <li>
+            <strong>Ventures</strong>
+            Onemore Please Bakery & Uni Sofia Travel
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORGANIZATION EXPERIENCE (Slide 3) -->
+  <section id="experience">
+    <div class="section-header">
+      <span class="section-tag">✦ leadership & campus impact ✦</span>
+      <div class="banner-title banner-purple">
+        <h2>organization experience</h2>
+      </div>
+    </div>
+
+    <div class="experience-grid">
+      <!-- 2026-present IPRMSA -->
+      <div class="exp-card yellow-accent">
+        <div class="exp-year">2026 – Present</div>
+        <div class="exp-title">IPRMSA Universiti Malaya</div>
+        <div style="font-weight: 600; color: var(--purple-lavender); font-size: 0.85rem; margin-bottom: 6px;">Marketing & Media Relations</div>
+        <div class="exp-desc">
+          Handles external communications, PR presence, and public engagement for Institute of Public Relations Malaysia Student Association.
+        </div>
+      </div>
+
+      <!-- 2026-present AIESEC -->
+      <div class="exp-card pink-accent">
+        <div class="exp-year">2026 – Present</div>
+        <div class="exp-title">AIESEC in Universiti Malaya</div>
+        <div style="font-weight: 600; color: var(--purple-lavender); font-size: 0.85rem; margin-bottom: 6px;">Marketing Associate</div>
+        <div class="exp-desc">
+          Led promotional campaigns for Global Volunteer South Korea, generated applicant leads, and managed social engagement.
+        </div>
+      </div>
+
+      <!-- 2025-2026 PPIUM -->
+      <div class="exp-card purple-accent">
+        <div class="exp-year">2025 – 2026</div>
+        <div class="exp-title">PPI Universiti Malaya (PPIUM)</div>
+        <div style="font-weight: 600; color: var(--purple-lavender); font-size: 0.85rem; margin-bottom: 6px;">Advocation & Student Affairs</div>
+        <div class="exp-desc">
+          Guided incoming students with university enrollment, campus administration, and student welfare support.
+        </div>
+      </div>
+
+      <!-- 2025 IDFest -->
+      <div class="exp-card yellow-accent">
+        <div class="exp-year">2025</div>
+        <div class="exp-title">IDFEST 2025 Cultural Festival</div>
+        <div style="font-weight: 600; color: var(--purple-lavender); font-size: 0.85rem; margin-bottom: 6px;">Head of Marketing</div>
+        <div class="exp-desc">
+          Directed full marketing and publication strategy: media partnerships, WhatsApp blast workflows, on-ground promos, and brand consistency.
+        </div>
+      </div>
+
+      <!-- 2025 UMISA -->
+      <div class="exp-card purple-accent">
+        <div class="exp-year">2025</div>
+        <div class="exp-title">UMISA International Appreciation Dinner</div>
+        <div style="font-weight: 600; color: var(--purple-lavender); font-size: 0.85rem; margin-bottom: 6px;">Head of Marketing & Publication</div>
+        <div class="exp-desc">
+          Supervised social media feeds, stories, and reels; handled attendee registration and communications via WhatsApp.
+        </div>
+      </div>
+
+      <!-- 2024 IDFest -->
+      <div class="exp-card pink-accent">
+        <div class="exp-year">2024</div>
+        <div class="exp-title">IDFEST 2024</div>
+        <div style="font-weight: 600; color: var(--purple-lavender); font-size: 0.85rem; margin-bottom: 6px;">Marketing & Content Creator</div>
+        <div class="exp-desc">
+          Created interactive Instagram Stories, managed countdown campaigns, and produced creative Reels content.
+        </div>
+      </div>
+
+      <!-- 2021-2022 IPM -->
+      <div class="exp-card yellow-accent">
+        <div class="exp-year">2021 – 2022</div>
+        <div class="exp-title">IPM SMA Muhammadiyah 11 Jakarta</div>
+        <div style="font-weight: 600; color: var(--purple-lavender); font-size: 0.85rem; margin-bottom: 6px;">PR & Head of Social Media Handler</div>
+        <div class="exp-desc">
+          Managed organizational online presence, designed event collaterals, and later served as Treasurer (2022-2023).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS BRAND DESIGN (Slide 4) -->
+  <section id="branding">
+    <div class="section-header">
+      <span class="section-tag">✦ commercial branding & identity ✦</span>
+      <div class="banner-title banner-purple">
+        <h2>business brand design</h2>
+      </div>
+    </div>
+
+    <!-- Onemore Please Bakery -->
+    <div class="project-card">
+      <div class="project-header-bar">
+        <div class="project-title-area">
+          <h3>Onemore Please Bakery (@0nemore_please)</h3>
+          <p>Full Brand Identity System, Packaging, Greeting Cards & Social Media Curation (2025 – Present)</p>
+        </div>
+        <div>
+          <span class="pill pill-purple">Commercial Venture</span>
+          <span class="pill pill-yellow">Brand Strategy</span>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div>
+          <h4 style="color: var(--navy); margin-bottom: 12px; font-size: 1.15rem;">Project Overview</h4>
+          <p style="font-size: 0.95rem; color: var(--text-dark); margin-bottom: 14px;">
+            Developed and executed a vibrant, cheerful brand identity for an artisanal pastry business. Designed print packaging collaterals including <strong>Hari Raya Idul Fitri Greeting Cards</strong> with classic blue/yellow checkerboard motifs and signature <strong>"Thank You!" customer cards</strong> with gold star accents.
+          </p>
+          <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+            <li>Curated Instagram visual puzzle feed showcasing Chewy Brownies, Banana Muffins, and Ramadhan Hampers.</li>
+            <li>Created interactive "Open Pre-Order" story templates and celebration graphics (e.g. "We've reached 28 orders on 1st Pre-Order!").</li>
+            <li>Managed daily direct customer orders, customer care, and social copy.</li>
+          </ul>
+        </div>
+
+        <div class="visual-mockup-grid">
+          <div class="mockup-item">
+            <div class="mockup-icon">💌</div>
+            <div class="mockup-title">Eid Greeting Cards</div>
+            <div class="mockup-sub">Idul Fitri Custom Card Design</div>
+          </div>
+          <div class="mockup-item">
+            <div class="mockup-icon">⭐</div>
+            <div class="mockup-title">Thank You Cards</div>
+            <div class="mockup-sub">Customer Appreciation Collateral</div>
+          </div>
+          <div class="mockup-item">
+            <div class="mockup-icon">🧁</div>
+            <div class="mockup-title">Product Photography</div>
+            <div class="mockup-sub">Brownies, Muffins & Hampers</div>
+          </div>
+          <div class="mockup-item">
+            <div class="mockup-icon">📱</div>
+            <div class="mockup-title">IG Feed & Story Grid</div>
+            <div class="mockup-sub">Interactive PO & Launch Templates</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOMENTUS 2026 Capstone -->
+    <div class="project-card">
+      <div class="project-header-bar">
+        <div class="project-title-area">
+          <h3>MOMENTUS 2026: Equestrian Company Rebranding</h3>
+          <p>Winner of Branding Kit Final Year Project — Faculty of Arts and Social Sciences, Universiti Malaya (2026)</p>
+        </div>
+        <div>
+          <span class="pill pill-yellow">Award Winner</span>
+          <span class="pill pill-purple">Brand Kit</span>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div>
+          <h4 style="color: var(--navy); margin-bottom: 12px; font-size: 1.15rem;">Capstone Rebranding System</h4>
+          <p style="font-size: 0.95rem; color: var(--text-dark); margin-bottom: 14px;">
+            Engineered a complete brand overhaul for an equestrian enterprise, crafting a luxury, trustworthy visual presence across all digital and print touchpoints.
+          </p>
+          <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+            <li>Redesigned logo symbol, typography pairing, and sophisticated color palette.</li>
+            <li>Built responsive website layout mockups optimized for client onboarding.</li>
+            <li>Designed Instagram promotional templates, printed tri-fold brochures, and official merchandise.</li>
+            <li>Delivered formal capstone visual guideline deck and defense presentation to faculty jury.</li>
+          </ul>
+        </div>
+
+        <div class="visual-mockup-grid">
+          <div class="mockup-item">
+            <div class="mockup-icon">🏇</div>
+            <div class="mockup-title">Logo & Visual Identity</div>
+            <div class="mockup-sub">Color Palette & Typography</div>
+          </div>
+          <div class="mockup-item">
+            <div class="mockup-icon">💻</div>
+            <div class="mockup-title">Responsive Web UI</div>
+            <div class="mockup-sub">Digital Platform Wireframes</div>
+          </div>
+          <div class="mockup-item">
+            <div class="mockup-icon">📄</div>
+            <div class="mockup-title">Print Brochures</div>
+            <div class="mockup-sub">Corporate Marketing Collateral</div>
+          </div>
+          <div class="mockup-item">
+            <div class="mockup-icon">🏆</div>
+            <div class="mockup-title">Dean's Best Brand Kit</div>
+            <div class="mockup-sub">MOMENTUS 2026 Finalist Award</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPAIGNS, POSTERS & MARKETING (Slides 5 & 6) -->
+  <section id="marketing">
+    <div class="section-header">
+      <span class="section-tag">✦ campaign strategy & publication ✦</span>
+      <div class="banner-title banner-yellow">
+        <h2>IG Feeds, Posters & Ads</h2>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header-bar">
+        <div class="project-title-area">
+          <h3>Campaigns, Daily Work Design & Media Proposals</h3>
+          <p>Event Promotion, Youth Advocacy, Theatrical Productions & Media Kits (2024 – 2026)</p>
+        </div>
+        <div>
+          <span class="pill pill-pink">Social Media Planner</span>
+          <span class="pill pill-purple">Media Kits</span>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div>
+          <h4 style="color: var(--navy); margin-bottom: 12px; font-size: 1.15rem;">Key Marketing Campaigns</h4>
+          <ul style="padding-left: 20px; font-size: 0.92rem; color: var(--text-dark); line-height: 1.7;">
+            <li><strong>IDFEST 2025 Media Partner Proposal:</strong> Created sponsorship packages, Instagram growth pitch sheets, and tiered benefit brochures for commercial brand sponsors.</li>
+            <li><strong>IDFEST Social Media Planner:</strong> Executed cohesive 9-square Instagram puzzle grid incorporating "Recap", "D-Day", "Ticket Redemption", and "Official Rundown".</li>
+            <li><strong>AIESEC South Korea Global Volunteer:</strong> Designed high-converting promotional ads and recruitment carousels for student exchange programs in Seoul.</li>
+            <li><strong>BondAy 2025:</strong> Creative interactive countdown ("03 DAYS LEFT") with branded frame templates.</li>
+            <li><strong>@pedra_um Theatrical Production:</strong> Designed suspenseful, dramatic red/black gothic theater play teasers, cast announcements, and ticket launch assets.</li>
+            <li><strong>spin.your.style:</strong> Fashion awareness social campaign educating consumers on sustainable apparel habits and mindful consumption.</li>
+          </ul>
+        </div>
+
+        <div class="visual-mockup-grid">
+          <div class="mockup-item">
+            <div class="mockup-icon">📑</div>
+            <div class="mockup-title">Media Kit Deck</div>
+            <div class="mockup-sub">IDFEST 2025 Sponsor Proposals</div>
+          </div>
+          <div class="mockup-item">
+            <div class="mockup-icon">🎭</div>
+            <div class="mockup-title">Pedra UM Theater</div>
+            <div class="mockup-sub">Dramatic Poster & Feed Series</div>
+          </div>
+          <div class="mockup-item">
+            <div class="mockup-icon">🌏</div>
+            <div class="mockup-title">AIESEC Korea Ads</div>
+            <div class="mockup-sub">Global Volunteer Campaign</div>
+          </div>
+          <div class="mockup-item">
+            <div class="mockup-icon">👗</div>
+            <div class="mockup-title">Spin Your Style</div>
+            <div class="mockup-sub">Sustainable Fashion Education</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOGRAPHY (Slide 7) -->
+  <section id="photography">
+    <div class="section-header">
+      <span class="section-tag">✦ visual storytelling ✦</span>
+      <div class="banner-title banner-yellow">
+        <h2>Photography</h2>
+      </div>
+    </div>
+
+    <div class="photo-masonry">
+      <div class="photo-frame">
+        <div class="washi-tape washi-purple" style="top: -8px; left: 30%; width: 80px;"></div>
+        <div class="photo-box">
+          <div style="font-size: 2.2rem; margin-bottom: 6px;">🏙️</div>
+          <div style="font-weight: 700; color: var(--navy);">Myeongdong Market</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Fruit stall & vibrant street life</div>
+        </div>
+        <div class="photo-caption">Seoul Street Vibes</div>
+      </div>
+
+      <div class="photo-frame">
+        <div class="washi-tape washi-pink" style="top: -8px; left: 25%; width: 90px;"></div>
+        <div class="photo-box">
+          <div style="font-size: 2.2rem; margin-bottom: 6px;">🍁</div>
+          <div style="font-weight: 700; color: var(--navy);">Autumn Foliage</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Vibrant red maple canopy</div>
+        </div>
+        <div class="photo-caption">Golden Autumn Walk</div>
+      </div>
+
+      <div class="photo-frame">
+        <div class="washi-tape" style="top: -8px; left: 35%; width: 70px;"></div>
+        <div class="photo-box">
+          <div style="font-size: 2.2rem; margin-bottom: 6px;">🌅</div>
+          <div style="font-weight: 700; color: var(--navy);">Coastal Sunset</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Silhouettes at dusk beach</div>
+        </div>
+        <div class="photo-caption">Sundown Reflections</div>
+      </div>
+
+      <div class="photo-frame">
+        <div class="washi-tape washi-purple" style="top: -8px; left: 28%; width: 80px;"></div>
+        <div class="photo-box">
+          <div style="font-size: 2.2rem; margin-bottom: 6px;">🏮</div>
+          <div style="font-weight: 700; color: var(--navy);">Tokyo Alleyways</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Cozy izakaya & lantern streets</div>
+        </div>
+        <div class="photo-caption">Japan Night Exploration</div>
+      </div>
+
+      <div class="photo-frame">
+        <div class="washi-tape washi-pink" style="top: -8px; left: 30%; width: 80px;"></div>
+        <div class="photo-box">
+          <div style="font-size: 2.2rem; margin-bottom: 6px;">🪩</div>
+          <div style="font-weight: 700; color: var(--navy);">Vintage Ambient Bar</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Retro disco ball & warm glows</div>
+        </div>
+        <div class="photo-caption">Moody Interiors</div>
+      </div>
+
+      <div class="photo-frame">
+        <div class="washi-tape" style="top: -8px; left: 25%; width: 80px;"></div>
+        <div class="photo-box">
+          <div style="font-size: 2.2rem; margin-bottom: 6px;">🌊</div>
+          <div style="font-weight: 700; color: var(--navy);">KLCC Lake Fountains</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Urban architecture & waterfront</div>
+        </div>
+        <div class="photo-caption">Cityscape Strolls</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODELING & STYLING (Slide 8) -->
+  <section id="styling">
+    <div class="section-header">
+      <span class="section-tag">✦ fashion curation & aesthetic direction ✦</span>
+      <div class="banner-title banner-yellow">
+        <h2>Modeling & Styling</h2>
+      </div>
+    </div>
+
+    <div class="photo-masonry">
+      <div class="photo-frame">
+        <div class="photo-box">
+          <div style="font-size: 2rem; margin-bottom: 6px;">👜</div>
+          <div style="font-weight: 700; color: var(--navy);">Lakeside Chic</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Polka-dot blouse, red shoulder bag & soft scarf</div>
+        </div>
+        <div class="photo-caption">Daytime Classic</div>
+      </div>
+
+      <div class="photo-frame">
+        <div class="photo-box">
+          <div style="font-size: 2rem; margin-bottom: 6px;">🌸</div>
+          <div style="font-weight: 700; color: var(--navy);">Pastel Floral Boutique</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Soft pink hijab & floral patterned hoodie</div>
+        </div>
+        <div class="photo-caption">Modest Pastel Bloom</div>
+      </div>
+
+      <div class="photo-frame">
+        <div class="photo-box">
+          <div style="font-size: 2rem; margin-bottom: 6px;">🪩</div>
+          <div style="font-weight: 700; color: var(--navy);">Monochrome Disco</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Striped boatneck knit & pleated ivory skirt</div>
+        </div>
+        <div class="photo-caption">Retro Contemporary</div>
+      </div>
+
+      <div class="photo-frame">
+        <div class="photo-box">
+          <div style="font-size: 2rem; margin-bottom: 6px;">🌺</div>
+          <div style="font-weight: 700; color: var(--navy);">Batik & Heritage</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Traditional printed dress & rich crimson hijab</div>
+        </div>
+        <div class="photo-caption">Cultural Elegance</div>
+      </div>
+
+      <div class="photo-frame">
+        <div class="photo-box">
+          <div style="font-size: 2rem; margin-bottom: 6px;">🧣</div>
+          <div style="font-weight: 700; color: var(--navy);">Autumn Streetwear</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Trench jacket, flowy culottes & sneakers</div>
+        </div>
+        <div class="photo-caption">Urban Cozy Wanderer</div>
+      </div>
+
+      <div class="photo-frame">
+        <div class="photo-box">
+          <div style="font-size: 2rem; margin-bottom: 6px;">☕</div>
+          <div style="font-weight: 700; color: var(--navy);">Cafe Knitwear</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Vibrant red cardigan & relaxed denim</div>
+        </div>
+        <div class="photo-caption">Casual Warmth</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF SLIDE DECK VIEWER -->
+  <section id="deck-viewer">
+    <div class="section-header">
+      <span class="section-tag">✦ interactive presentation ✦</span>
+      <div class="banner-title banner-navy">
+        <h2>Original 9-Slide Creative Deck</h2>
+      </div>
+    </div>
+
+    <div class="pdf-viewer-section">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+        <div>
+          <h3 style="font-size: 1.3rem; color: var(--navy);">Explore the Complete Deck</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">Flip through the high-resolution scrapbook slides directly or download the full PDF presentation.</p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <a href="portfolio.pdf" download class="btn btn-purple">📥 Download Deck (PDF)</a>
+          <a href="Sofia_Nabila_CV.pdf" download class="btn btn-navy">📄 Download CV</a>
+        </div>
+      </div>
+
+      <div class="pdf-frame-wrapper">
+        <iframe src="portfolio.pdf#toolbar=1&navpanes=0&scrollbar=1" type="application/pdf">
+          <p>Your browser does not support embedded PDFs. Please <a href="portfolio.pdf">click here to download the PDF</a>.</p>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION (Slide 9) -->
+  <section id="contact">
+    <div class="contact-container">
+      <div class="washi-tape washi-purple" style="top: -12px; left: 35%; width: 140px; transform: rotate(-1deg);"></div>
+      
+      <span class="section-tag">✦ let's collaborate ✦</span>
+      <h2 style="font-size: 2.8rem; color: var(--navy); margin-bottom: 8px;">Contact Me</h2>
+      <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 500px; margin: 0 auto;">
+        I'm actively seeking communication & media internship opportunities where I can contribute creative strategy, brand storytelling, and multi-channel marketing.
+      </p>
+
+      <div class="contact-grid">
+        <a href="https://wa.me/601112926098" target="_blank" class="contact-card">
+          <div class="icon">💬</div>
+          <div class="label">WhatsApp (Malaysia)</div>
+          <div class="val">+60 1112926098</div>
+        </a>
+
+        <a href="https://wa.me/6287882227955" target="_blank" class="contact-card">
+          <div class="icon">📱</div>
+          <div class="label">WhatsApp (Indonesia)</div>
+          <div class="val">+62 87882227955</div>
+        </a>
+
+        <a href="mailto:sofinabila1811@gmail.com" class="contact-card">
+          <div class="icon">✉️</div>
+          <div class="label">Email</div>
+          <div class="val">sofinabila1811@gmail.com</div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/sofia-nabila-74503a2b2" target="_blank" class="contact-card">
+          <div class="icon">💼</div>
+          <div class="label">LinkedIn</div>
+          <div class="val">sofia-nabila-74503a2b2</div>
+        </a>
+
+        <a href="https://instagram.com/sofiaanbla" target="_blank" class="contact-card">
+          <div class="icon">📸</div>
+          <div class="label">Instagram</div>
+          <div class="val">@sofiaanbla</div>
+        </a>
+
+        <a href="https://instagram.com/0nemore_please" target="_blank" class="contact-card">
+          <div class="icon">🧁</div>
+          <div class="label">Bakery Brand</div>
+          <div class="val">@0nemore_please</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Sofia Nabila</strong> — Creative Portfolio & Media Studies, Universiti Malaya</p>
+    <p style="font-size: 0.8rem; color: #94a3b8;">
+      Crafted with passion, scrapbook aesthetics, and love ✦ All rights reserved © 2026
+    </p>
+  </footer>
+
+</body>
+</html>
